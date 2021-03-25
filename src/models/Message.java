@@ -30,11 +30,29 @@ public class Message {
     @Column(name = "title", length = 255, nullable = false)
     private String title;
 
+
+
     @Column(name = "content", length = 255, nullable = false)
+    private String content;
+
+    @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
+
+
+
+    public String getContent() {
+        return content;
+
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+
 
     public Integer getId() {
         return id;
@@ -42,6 +60,16 @@ public class Message {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
     }
 
     public String getTitle() {
@@ -52,14 +80,6 @@ public class Message {
         this.title = title;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
-    }
-
     public Timestamp getUpdated_at() {
         return updated_at;
     }
@@ -67,7 +87,6 @@ public class Message {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
-
 
 
 }
