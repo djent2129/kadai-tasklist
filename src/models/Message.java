@@ -27,8 +27,7 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "title", length = 255, nullable = false)
-    private String title;
+
 
 
 
@@ -72,13 +71,7 @@ public class Message {
         this.created_at = created_at;
     }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public Timestamp getUpdated_at() {
         return updated_at;
