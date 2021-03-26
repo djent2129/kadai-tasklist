@@ -4,13 +4,13 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
 
-    <h2>id : ${message.id)のメッセージ詳細ページ</h2>
+    <h2>id : ${message.id}のメッセージ詳細ページ</h2>
 
-    <p>タスク：<c:out value=${message/.content}" /></p>
-    <p>作成日時 : <fmt:formatDate value="${message.created_at}" pattren="yyyy-MM-dd"HH:mm:ss" /></p>
-    <p>更新日時 : <fmt:formatDate value="${message.created_at}" pattern="yyyy-MM-dd"HH:mm:ss" /></p>
+    <p>タスク：<c:out value="${message.content}" /></p>
+    <p>作成日時 : <fmt:formatDate value="${message.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
+    <p>更新日時 : <fmt:formatDate value="${message.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
 
-    <p><a herf="${pageContent.request.contextPath}/index">一覧に戻る</a></p>
+    <p><a href="${pageContent.request.contextPath}/index">一覧に戻る</a></p>
 
     </c:param>
 </c:import>
