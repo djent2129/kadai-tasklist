@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Message;
+import models.Task;
 import utils.DBUtil;
 /**
  * Servlet implementation class ShowServlet
@@ -34,12 +34,12 @@ public class ShowServlet extends HttpServlet {
     EntityManager em = DBUtil.createEntityManager();
 
     //該当のIDのメッセージ1件のみデータベースから取得
-    Message m = em.find(Message.class, Integer.parseInt(request.getParameter("id")));
+    Task m = em.find(Task.class, Integer.parseInt(request.getParameter("id")));
 
     em. close();
 
     //メッセージをリクエストスコープにセットしてshow.jspを呼び出す
-    request.setAttribute("message", m);
+    request.setAttribute("task", m);
 
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/show.jsp");
     rd.forward(request, response);

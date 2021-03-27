@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Message;
+import models.Task;
 import utils.DBUtil;
 
 /**
@@ -38,7 +38,7 @@ public class UpdateServlet extends HttpServlet {
 
             //セッションスコープからメッセージのIDを取得して
             //該当のIDのメッセージ１件のみをデータベースから取得
-            Message m = em.find(Message.class, (Integer)(request.getSession().getAttribute("message_id")));
+            Task m = em.find(Task.class, (Integer)(request.getSession().getAttribute("task_id")));
 
             //フォームの内容を各フィールドの上書き
             String content = request.getParameter("content");
@@ -52,7 +52,7 @@ public class UpdateServlet extends HttpServlet {
             em.close();
 
             //セッションスコープ上の不要となったデータを削除
-            request.getSession().removeAttribute("message_id");
+            request.getSession().removeAttribute("task_id");
 
             //indexページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/index");
